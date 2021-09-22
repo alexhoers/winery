@@ -1,0 +1,42 @@
+
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #F7F7F7;
+    color: white;
+    font-weight: 600;
+}
+
+.top {
+    top: 60px;
+}
+
+.white {
+    background-color: white;
+}
+
+.box {
+    all: unset;
+    background-color: white;
+    height: 60px;
+    width: 100px;
+    margin: 10 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-family: "Overpass",sans-serif;
+    font-weight: 100;
+}
+
+.box:hover {
+    border-bottom: 2px solid saddlebrown;
+    margin-bottom: 2px;
+}
+  
