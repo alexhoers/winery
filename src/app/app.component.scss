@@ -1,16 +1,19 @@
+.right {
+    margin-left: calc(100% - 240px) !important;
+}
 
 .search {
-    height: 40px;
-    background-color: #F7F7F7;
-    border: none;
+    cursor: pointer;
 }
 
 .toolbar {
+    padding-left: 200px;
+    padding-right: 200px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 80px;
     display: flex;
     align-items: center;
     background-color: #F7F7F7;
@@ -20,23 +23,17 @@
 }
 
 .top {
-    top: 60px;
+    top: 82px;
 }
 
 .white {
     background-color: white;
 }
 
-.test {
-    background-color: red;
-}
-
 .box {
     all: unset;
-    background-color: white;
-    height: 60px;
+    height: 80px;
     width: 100px;
-    margin: 10 0 0 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -44,6 +41,8 @@
     color: black;
     font-family: "Overpass",sans-serif;
     font-weight: 100;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 .box:hover {
@@ -52,6 +51,6 @@
 }
 
 .left {
-    margin-left: 300px;
+    margin-left: 200px;
 }
   
