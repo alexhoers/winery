@@ -53,4 +53,20 @@
 .left {
     margin-left: 200px;
 }
+
+.bg-beige {
+    background-color: #F7F7F7;
+}
   
+.nav-link {
+    color: black;
+    font-family: "Overpass",sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+    border-bottom: 2px solid saddlebrown;
+}
