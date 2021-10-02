@@ -10,16 +10,20 @@ import { Wine } from 'src/app/shared/models/wine';
 })
 export class SelectionComponent implements OnInit {
 
-  data: Wine[] = [];
+  wines: Wine[] = [];
   loading: boolean = true;
 
   constructor(private dataService: DataService) { 
     dataService.getWines().pipe(finalize(()=>{this.loading=false})).subscribe( data => {
-      this.data = data;
+      this.wines = data;
     })
   }
 
   ngOnInit(): void {
+  }
+
+  get winesCount(): number {
+    return this.wines.length;
   }
 
 }

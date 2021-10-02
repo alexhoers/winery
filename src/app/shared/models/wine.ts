@@ -1,17 +1,17 @@
 import { Injectable } from "@angular/core";
 import { Adapter } from "../interfaces/adapter";
+import { Type } from "./enums/types";
 
 
 export class Wine {
     name: string;
     producer: string;
-    type: string; // TODO should be enum
+    type: Type; // TODO should be enum
     year: string;
     description: string;
     image: string;
     rating: number;
     notes: string[];
-
 
     public constructor(init?: Partial<Wine>) {
         Object.assign(this, init);

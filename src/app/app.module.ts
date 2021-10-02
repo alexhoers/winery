@@ -10,6 +10,7 @@ import { AboutComponent } from './modules/two-column-page/about/about.component'
 import { SelectionComponent } from './modules/two-column-page/selection/selection.component';
 import { WinesComponent } from './modules/two-column-page/wines/wines.component';
 import { DataService } from './core/services/data.service';
+import { UserLoginComponent } from './modules/user-login/user-login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DataService } from './core/services/data.service';
     FilterMenuComponent,
     AboutComponent,
     SelectionComponent,
-    WinesComponent
+    WinesComponent,
+    UserLoginComponent
   ],
   imports: [
     BrowserModule,

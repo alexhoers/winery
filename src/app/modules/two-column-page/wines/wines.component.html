@@ -1,1 +1,22 @@
-<p>wines works!</p>
+<div>
+    <h1>Wines</h1>
+</div>
+<div *ngIf="loading">
+    <img src="/assets/spinner.gif" height="40" width="40">
+</div>
+
+<div *ngFor="let news of newsList">
+    <div class="d-flex justify-content-between mb-3">
+        <div class="pr-1">
+            <h4>{{ news.title }}</h4>
+        </div>
+        <div>{{ news.date | date:'medium' }}</div>
+    </div>
+    <div class="d-flex justify-content-between">
+        <div >
+            <p>{{ news.description }}</p>
+        </div>
+    </div>
+    
+</div>
+<img *ngIf="!loading" class="bg-img" src="/assets/images/garden.jpg">
