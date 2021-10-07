@@ -10,7 +10,8 @@ import { AboutComponent } from './modules/two-column-page/about/about.component'
 import { SelectionComponent } from './modules/two-column-page/selection/selection.component';
 import { WinesComponent } from './modules/two-column-page/wines/wines.component';
 import { DataService } from './core/services/data.service';
-import { UserLoginComponent } from './modules/user-login/user-login.component';
+
+// TODO: 1) Create imports as barrels.
 
 @NgModule({
   declarations: [
@@ -20,8 +21,7 @@ import { UserLoginComponent } from './modules/user-login/user-login.component';
     FilterMenuComponent,
     AboutComponent,
     SelectionComponent,
-    WinesComponent,
-    UserLoginComponent
+    WinesComponent
   ],
   imports: [
     BrowserModule,

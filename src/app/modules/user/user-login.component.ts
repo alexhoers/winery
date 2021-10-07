@@ -16,7 +16,7 @@ export class UserLoginComponent implements OnInit {
   }
 
   login(formValues: any) {
-    console.log(formValues);
+    console.log(formValues.value);
   }
 
 }

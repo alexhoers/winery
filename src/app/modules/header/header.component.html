@@ -6,20 +6,20 @@
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" routerLink="/wines">
+            <a class="navbar-brand" [routerLink]="['/wines']">
                 <img src="/assets/icons/winery.png" alt="" class="d-inline-block align-top" width="30" height="30">
                 Winery
             </a>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/wines">Wines</a>
+                        <a class="nav-link" [routerLink]="['/wines']" routerLinkActive="active">Wines</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/selection">Selection</a>
+                        <a class="nav-link" [routerLink]="['/selection']" routerLinkActive="active" >Selection</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/about">About</a>
+                        <a class="nav-link" [routerLink]="['/about']"  routerLinkActive="active">About</a>
                     </li>
                 </ul>
                 <!--<form class="d-flex">
@@ -27,7 +27,7 @@
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>-->
                 <span class="navbar-text">
-                    <a  routerLink="/user/login">Sign in</a>
+                    <a [routerLink]="['/user/login']">Sign in</a>
                 </span>
             </div>
         </nav>
