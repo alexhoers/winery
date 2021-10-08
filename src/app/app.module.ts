@@ -10,6 +10,7 @@ import { AboutComponent } from './modules/two-column-page/about/about.component'
 import { SelectionComponent } from './modules/two-column-page/selection/selection.component';
 import { WinesComponent } from './modules/two-column-page/wines/wines.component';
 import { DataService } from './core/services/data.service';
+import { AuthService } from './core/services/auth.service.';
 
 // TODO: 1) Create imports as barrels.
 
@@ -28,7 +29,7 @@ import { DataService } from './core/services/data.service';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [DataService],
+  providers: [DataService, AuthService], // Shared across modules if added in AppModule
   bootstrap: [AppComponent]
 })
 export class AppModule { }

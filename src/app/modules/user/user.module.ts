@@ -3,14 +3,15 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { UserRoutes } from './user.routes';
 import { UserLoginComponent } from "./user-login.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 // Feature module / lazily loaded module
 @NgModule({
     imports: [
         CommonModule,
         RouterModule.forChild(UserRoutes),
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
     declarations: [
         UserLoginComponent

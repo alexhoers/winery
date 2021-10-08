@@ -27,7 +27,8 @@
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>-->
                 <span class="navbar-text">
-                    <a [routerLink]="['/user/login']">Sign in</a>
+                    <a *ngIf="!authService.isAuthenticated()" [routerLink]="['/user/login']">Sign in</a>
+                    <a *ngIf="authService.isAuthenticated()" [routerLink]="['/user/profile']">Welcome {{ authService.currentUser.firstName }}</a>
                 </span>
             </div>
         </nav>
