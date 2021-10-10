@@ -1,4 +1,22 @@
-.mb-3, .my-3 {
+.card-img-top {
+    max-width: 75px;
+}
+.card {
+    cursor: pointer;
+}
+.card img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.btn-primary {
+    color: rgba(0,0,0,.9);
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+}
+
+.mb-3 {
     margin-bottom: 1rem !important;
 }
 .justify-content-between {
@@ -6,22 +24,4 @@
 }
 .d-flex {
     display: flex !important;
-}
-.mb-5, .my-5 {
-    margin-bottom: 3rem !important;
-}
-.h1, h1 {
-    font-size: 2.5rem;
-}
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-    margin-bottom: .5rem;
-    font-weight: 500;
-    line-height: 1.2;
-}
-
-.bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    overflow: hidden;
 }
