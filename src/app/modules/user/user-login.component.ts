@@ -39,11 +39,11 @@ export class UserLoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.authService.loginUser(formValues.email, formValues.password);
       console.log(formValues.value)
-      this.router.navigate(['wines']);
+      this.router.navigate(['home']);
     };
   }
 
   cancel() {
-    this.router.navigate(['wines']);
+    this.router.navigate(['home']);
   }
 }

@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AboutComponent } from './modules/two-column-page/about/about.component';
-import { SelectionComponent } from './modules/two-column-page/selection/selection.component';
-import { TwoColumnPageComponent } from './modules/two-column-page/two-column-page.component';
+import { AboutComponent } from './modules/about/about.component';
 import { WinesComponent } from './modules/two-column-page/wines/wines.component';
+import { TwoColumnPageComponent } from './modules/two-column-page/two-column-page.component';
+import { HomeComponent } from './modules/two-column-page/home/home.component';
+import { WineDetailsComponent } from './modules/two-column-page/wines/wine-details/wine-details.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'wines', pathMatch: 'full'},
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: '', component: TwoColumnPageComponent, children: [
     { path: 'about', component: AboutComponent },
+    { path: 'home', component: HomeComponent },
     { path: 'wines', component: WinesComponent },
-    { path: 'selection', component: SelectionComponent }
+    { path: 'wines/:id', component: WineDetailsComponent }
   ]},
   { path: 'user', 
   loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule)},
-  { path: '**', redirectTo: 'wines' }
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './modules/header/header.component';
 import { TwoColumnPageComponent } from './modules/two-column-page/two-column-page.component';
-import { FilterMenuComponent } from './modules/two-column-page/filter-menu/filter-menu.component';
-import { AboutComponent } from './modules/two-column-page/about/about.component';
-import { SelectionComponent } from './modules/two-column-page/selection/selection.component';
+import { NewsComponent } from './modules/two-column-page/news/news.component';
+import { AboutComponent } from './modules/about/about.component';
 import { WinesComponent } from './modules/two-column-page/wines/wines.component';
+import { HomeComponent } from './modules/two-column-page/home/home.component';
 import { AuthService, DataService, JQUERY_SERVICE } from './core/services/index';
-import { AddWineModalComponent } from './modules/two-column-page/selection/add-wine-modal/add-wine-modal.component';
+import { WineAddModalComponent } from './modules/two-column-page/wines/wine-add-modal/wine-add-modal.component';
+import { WineDetailsComponent } from './modules/two-column-page/wines/wine-details/wine-details.component';
+import { CollapsibleWellComponent } from './shared/components/collapsible-well.component';
 
 // TODO: 1) Create imports as barrels.
 
@@ -19,11 +21,13 @@ import { AddWineModalComponent } from './modules/two-column-page/selection/add-w
     AppComponent,
     HeaderComponent,
     TwoColumnPageComponent,
-    FilterMenuComponent,
+    NewsComponent,
     AboutComponent,
-    SelectionComponent,
     WinesComponent,
-    AddWineModalComponent
+    HomeComponent,
+    WineAddModalComponent,
+    WineDetailsComponent,
+    CollapsibleWellComponent
   ],
   imports: [
     BrowserModule,
