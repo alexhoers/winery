@@ -15,7 +15,7 @@ img {
     .box {
         border-bottom: 1px solid #e6e6e6;
         display: block;
-        //height: 100px;
+        max-height: 100px;
         overflow: hidden;
         background-color:white;
         transition: height 0.5s,  transform 0.5s;
@@ -29,20 +29,20 @@ img {
     }
     
 
-.start {
+.end {
     transform: rotate(-90deg);
     transition: 0.5s;
 }
 
-.end {
+.start {
     transform: rotate(0deg);
     transition: 0.5s;
 }
 
-#grow {
+.measuringDiv {
     border-bottom: 1px solid #e6e6e6;
     display: block;
-    height: 0px;
+    height: 0;
     overflow: hidden;
     background-color:white;
     transition: height 0.5s,  transform 0.5s;

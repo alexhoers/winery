@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
 
 @Component({
     selector: 'app-collapsible-well',
@@ -12,27 +12,47 @@ import { Component, Input } from "@angular/core";
                 {{title}} 
             </div>
             <div class="col-3 white">
-                test {{ visible }}
+                {{ date | date:'medium'}}
             </div>
             <div class="col-3 white">
-
-        </div>
-            <div (click)="toggleContent()"  [ngClass]="{'box': visible, 'boxclicked': !visible}">
-                <ng-content> </ng-content>
             </div>
-        </div>
-        
-    
+        <div>
+            <div id="{{idx}}" class="measuringDiv">
+                <div class="measuringWrapper">
+               <ng-content></ng-content>
+            </div>
+            </div>
+        </div>    
     `,
-    styleUrls: ['./collapsible-well.component.scss']
+    styleUrls: ['./collapsible-well.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
-export class CollapsibleWellComponent {
+export class CollapsibleWellComponent implements OnInit {
     @Input() title: string;
     @Input() date: Date;
+    @Input() idx: number;
+
+    @Input() open: boolean = false;
+
     visible: boolean = true;
+
+    ngOnInit() {
+        if (this.open) {
+            setTimeout(() => { this.toggleContent(); }, 500);
+        }
+    }
 
     toggleContent() {
         this.visible = !this.visible;
-        
+        var growDiv = document.getElementById(this.idx.toString()); 
+        if(!growDiv) {
+            return;
+        }
+        if (growDiv.clientHeight) { 
+            growDiv.style.height = "0"; 
+        } else { 
+            growDiv.style.height = growDiv.scrollHeight + 'px'; 
+        } 
     }
+
 }
