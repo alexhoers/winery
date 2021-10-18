@@ -13,6 +13,10 @@ import { AuthService, DataService, JQUERY_SERVICE } from './core/services/index'
 import { WineAddModalComponent } from './modules/two-column-page/wines/wine-add-modal/wine-add-modal.component';
 import { WineDetailsComponent } from './modules/two-column-page/wines/wine-details/wine-details.component';
 import { CollapsibleWellComponent } from './shared/components/collapsible-well.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
 
 // TODO: 1) Create imports as barrels.
 
@@ -33,7 +37,10 @@ import { CollapsibleWellComponent } from './shared/components/collapsible-well.c
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase())
   ],
   providers: [
     DataService, 
