@@ -6,10 +6,10 @@
             <img src="/assets/images/sandeman.png" class="card-img-top" alt="...">
         </div>
     </div>
-    <div class="col-lg-9">
+    <div class="col-lg-9" *ngIf="wine">
         <div class="row">
             <div class="col">
-                <h2 class="red">{{ wine.name }}, {{ wine. producer }}</h2>
+                <h2 class="red">{{ wine.name }}, {{ wine.producer }}</h2>
             </div>
         </div>
         <div class="row">

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/core/services';
+import { WineService } from 'src/app/core/services/wine.service';
 import { Wine } from 'src/app/shared/models/wine';
 
 @Component({
@@ -13,10 +14,11 @@ export class WineDetailsComponent implements OnInit {
   wine: Wine;
   // Remember to close subscriptions
 
-  constructor(private dataService: DataService, private router: ActivatedRoute) { }
+  constructor(private wineService: WineService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.dataService.getWine(+this.router.snapshot.params['id']).subscribe((w)=>this.wine=w);
+    this.wineService.getWine(this.router.snapshot.params['id']).subscribe((w)=>this.wine=w);
+    
   }
 
 }

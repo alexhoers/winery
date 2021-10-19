@@ -18,6 +18,7 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { WineService } from './core/services/wine.service';
 
 
 
@@ -47,7 +48,8 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
     provideFirestore(() => getFirestore())
   ],
   providers: [
-    DataService, 
+    DataService,
+    WineService, 
     AuthService,
     JQUERY_SERVICE], // Shared across modules if added in AppModule
   bootstrap: [AppComponent]

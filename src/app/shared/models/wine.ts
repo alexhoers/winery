@@ -5,7 +5,7 @@ import { Type } from "./enums/types";
 
 export class Wine {
 
-    id: number;
+    id: string;
     name: string;
     producer: string;
     type: Type; // TODO should be enum/list from server

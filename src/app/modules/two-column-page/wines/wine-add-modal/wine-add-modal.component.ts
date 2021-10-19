@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DataService } from 'src/app/core/services';
+import { WineService } from 'src/app/core/services/wine.service';
 
 
 import { Wine } from 'src/app/shared/models/wine';
@@ -16,7 +17,7 @@ export class WineAddModalComponent implements OnInit {
 
   wine = new Wine();
 
-  constructor(private dataService: DataService
+  constructor(private wineService: WineService
     ) {
 
     }
@@ -47,7 +48,7 @@ export class WineAddModalComponent implements OnInit {
     console.log(this.submitForm.valid)
     if (this.submitForm.valid) {
       this.wine = formValues.value;
-      this.dataService.addWine(this.wine);
+      this.wineService.addWine(this.wine);
     }
   }
 
