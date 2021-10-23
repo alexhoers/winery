@@ -4,6 +4,9 @@
         <div class="card">
             <h5 class="card-header">Sign in</h5>
             <div class="card-body">
+                <div *ngIf="!authenticated" class="error-display">
+                    The email or password you entered is incorrect
+                </div>
                 <form autocomplete="off" [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
                     <div class="form-group">
                         <label for="email">Email</label>      

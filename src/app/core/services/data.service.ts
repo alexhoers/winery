@@ -15,7 +15,7 @@ export class DataService {
     news: News[] = [];
 
     constructor() {
-        this.initData();
+        //this.initData();
     }
 
 
@@ -27,7 +27,7 @@ export class DataService {
         return of(this.news).pipe(delay(1000));
     }
 
-    public getWine(id: string): Observable<Wine> {
+    /*public getWine(id: string): Observable<Wine> {
         return of(this.wines.find(wine => wine.id === id));
     }
 
@@ -52,5 +52,5 @@ export class DataService {
         this.wines.push(new Wine({ id: "7", name: "Sandeman 20 Years", producer: "Sandeman", type: Type.TAWNY, year: "1980", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam laoreet tellus quis ipsum malesuada posuere porta in erat. Morbi tincidunt imperdiet commodo. Pellentesque libero dui, blandit ac mattis a, bibendum at eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.", image: "", rating: 92, notes: ["Apricot", "Farin", "Smoke"] }));
         this.wines.push(new Wine({ id: "8", name: "Sandeman 20 Years", producer: "Sandeman", type: Type.TAWNY, year: "1980", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam laoreet tellus quis ipsum malesuada posuere porta in erat. Morbi tincidunt imperdiet commodo. Pellentesque libero dui, blandit ac mattis a, bibendum at eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.", image: "", rating: 92, notes: ["Apricot", "Farin", "Smoke"] }));
         this.wines.push(new Wine({ id: "9", name: "Sandeman 20 Years", producer: "Sandeman", type: Type.TAWNY, year: "1980", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam laoreet tellus quis ipsum malesuada posuere porta in erat. Morbi tincidunt imperdiet commodo. Pellentesque libero dui, blandit ac mattis a, bibendum at eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.", image: "", rating: 92, notes: ["Apricot", "Farin", "Smoke"] }));
-    }
+    }*/
 }

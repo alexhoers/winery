@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-about',
@@ -11,5 +12,7 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
 
 }

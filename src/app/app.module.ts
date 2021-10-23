@@ -19,6 +19,10 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { WineService } from './core/services/wine.service';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
+import { MultipleSelectComponent } from './shared/components/multiple-select/multiple-select/multiple-select.component';
+
 
 
 
@@ -35,17 +39,20 @@ import { WineService } from './core/services/wine.service';
     HomeComponent,
     WineAddModalComponent,
     WineDetailsComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    MultipleSelectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, 
+    MatSelectModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
+    provideAuth(() => getAuth()), // TODO: Could be moved to user.module
     provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    NoopAnimationsModule
   ],
   providers: [
     DataService,

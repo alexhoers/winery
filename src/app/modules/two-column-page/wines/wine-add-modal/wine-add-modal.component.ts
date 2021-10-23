@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DataService } from 'src/app/core/services';
 import { WineService } from 'src/app/core/services/wine.service';
+import { Dictionary } from 'src/app/shared/interfaces/dictionary';
 
 
 import { Wine } from 'src/app/shared/models/wine';
@@ -17,9 +18,13 @@ export class WineAddModalComponent implements OnInit {
 
   wine = new Wine();
 
+  notes: Dictionary[];
+
   constructor(private wineService: WineService
     ) {
-
+      this.wineService.getNotes().subscribe(notes => {
+        this.notes = notes;
+      })
     }
 
   ngOnInit(): void {

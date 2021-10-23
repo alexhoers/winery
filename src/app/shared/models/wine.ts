@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Adapter } from "../interfaces/adapter";
 import { Type } from "./enums/types";
+import { Note } from "./note";
 
 
 export class Wine {
@@ -13,7 +14,7 @@ export class Wine {
     description: string;
     image: string;
     rating: number;
-    notes: string[];
+    notes: Note[];
 
     public constructor(init?: Partial<Wine>) {
         Object.assign(this, init);

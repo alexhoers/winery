@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Auth } from '@angular/fire/auth';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
@@ -12,10 +13,12 @@ export class UserLoginComponent implements OnInit {
 
   email: string;
   password: string;
-
   loginForm: FormGroup;
+  authenticated = true;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(
+    private authService: AuthService, 
+    private router: Router) { }
 
   ngOnInit(): void {
     let email = new FormControl(this.email,[Validators.required,Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]);
@@ -37,9 +40,10 @@ export class UserLoginComponent implements OnInit {
 
   login(formValues: any) {
     if (this.loginForm.valid) {
-      this.authService.loginUser(formValues.email, formValues.password);
-      console.log(formValues.value)
-      this.router.navigate(['home']);
+      this.authService.loginUser(formValues.value.email, formValues.value.password).then(error => {
+        console.log(error)
+        this.authenticated = false;
+      });
     };
   }
 
